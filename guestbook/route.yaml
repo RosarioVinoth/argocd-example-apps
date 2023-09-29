@@ -1,0 +1,18 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: example
+  namespace: gitops-deploy-app-test-1
+spec:
+  host: example-gitops-deploy-app-test-1.apps.aro-lab.euw-hub02.azure.volvo.net
+  path: /
+  to:
+    kind: Service
+    name: guestbook-ui
+    weight: 100
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
