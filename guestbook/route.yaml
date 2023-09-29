@@ -1,11 +1,8 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: example
-  namespace: gitops-deploy-app-test-1
+  name: guestbook
 spec:
-  host: example-gitops-deploy-app-test-1.apps.aro-lab.euw-hub02.azure.volvo.net
-  path: /
   to:
     kind: Service
     name: guestbook-ui
